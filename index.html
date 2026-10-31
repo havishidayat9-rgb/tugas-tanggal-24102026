@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMA Plus PGRI Cibinong — Nasionalis Sejati, Cerdas, dan Taqwa</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --green: #38ef7d;
+      --teal: #11998e;
+      --ink: #07131a;
+      --ink-2: #0f2027;
+      --soft: #f3faf7;
+      --gradient: linear-gradient(135deg, #11998e, #38ef7d);
+      --glass: rgba(255, 255, 255, .72);
+    }
+
+    * { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--soft);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, .brand-font {
+      font-family: 'Space Grotesk', sans-serif;
+      letter-spacing: -.02em;
+    }
+
+    .text-gradient {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      background: rgba(7, 19, 26, .82);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(56, 239, 125, .22);
+    }
+
+    .navbar-brand {
+      font-weight: 800;
+      letter-spacing: .08em;
+      color: #fff !important;
+    }
+
+    .brand-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 5px rgba(56, 239, 125, .18);
+    }
+
+    .nav-link {
+      color: rgba(255,255,255,.78) !important;
+      font-weight: 600;
+      border-radius: 999px;
+      padding: .5rem 1.1rem !important;
+      transition: .25s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #fff !important;
+      background: rgba(56, 239, 125, .16);
+      box-shadow: inset 0 0 0 1px rgba(56, 239, 125, .35);
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      min-height: 92vh;
+      display: grid;
+      place-items: center;
+      padding: 130px 0 150px;
+      color: #fff;
+      background:
+        radial-gradient(900px 500px at 15% 15%, rgba(17,153,142,.55), transparent 60%),
+        radial-gradient(800px 500px at 85% 25%, rgba(56,239,125,.28), transparent 60%),
+        linear-gradient(160deg, #07131a, #0f2027 55%, #16323d);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        repeating-linear-gradient(90deg, rgba(255,255,255,.045) 0 1px, transparent 1px 70px),
+        repeating-linear-gradient(0deg, rgba(255,255,255,.045) 0 1px, transparent 1px 70px);
+      transform: rotate(18deg);
+      animation: gridMove 18s linear infinite;
+    }
+
+    @keyframes gridMove {
+      to { transform: rotate(18deg) translateY(-70px); }
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 110px;
+      background: var(--soft);
+      clip-path: ellipse(70% 100% at 50% 100%);
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      padding: .55rem 1.1rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(56,239,125,.35);
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .live-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--green);
+      animation: blink 1.4s infinite;
+    }
+
+    @keyframes blink {
+      50% { opacity: .25; transform: scale(.8); }
+    }
+
+    .hero-title {
+      font-size: clamp(2.4rem, 6vw, 4.8rem);
+      font-weight: 700;
+      line-height: 1.03;
+    }
+
+    .hero-slogan {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .75rem 1.4rem;
+      border-radius: 999px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      color: #fff;
+      background: rgba(56, 239, 125, .12);
+      border: 1px solid rgba(56, 239, 125, .35);
+      box-shadow: 0 10px 30px rgba(56, 239, 125, .15);
+    }
+
+    .hero-slogan i {
+      color: var(--green);
+    }
+
+    .hero-logo {
+      width: 118px;
+      height: 118px;
+      object-fit: contain;
+      border-radius: 28px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: 0 25px 60px rgba(56,239,125,.25);
+      animation: float 5s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      50% { transform: translateY(-14px); }
+    }
+
+    .btn-neon {
+      background: var(--gradient);
+      color: #04231a;
+      font-weight: 800;
+      border: 0;
+      border-radius: 999px;
+      padding: .95rem 1.8rem;
+      box-shadow: 0 15px 35px rgba(56,239,125,.32);
+      transition: .25s ease;
+    }
+
+    .btn-neon:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 22px 45px rgba(56,239,125,.45);
+      color: #04231a;
+    }
+
+    .btn-ghost {
+      border: 1px solid rgba(255,255,255,.28);
+      color: #fff;
+      font-weight: 700;
+      border-radius: 999px;
+      padding: .95rem 1.7rem;
+      transition: .25s ease;
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255,255,255,.12);
+      color: #fff;
+      transform: translateY(-3px);
+    }
+
+    /* SECTION TITLE */
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--teal);
+    }
+
+    .section-label::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      background: var(--gradient);
+      border-radius: 2px;
+    }
+
+    /* CARDS */
+    .feature-card {
+      position: relative;
+      height: 100%;
+      padding: 2.2rem 1.8rem;
+      border-radius: 28px;
+      background: var(--glass);
+      border: 1px solid rgba(255,255,255,.75);
+      box-shadow: 0 20px 45px rgba(15,32,39,.08);
+      backdrop-filter: blur(14px);
+      overflow: hidden;
+      transition: .4s cubic-bezier(.2,.8,.25,1);
+    }
+
+    .feature-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(17,153,142,.14), rgba(56,239,125,.06));
+      opacity: 0;
+      transition: .35s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-14px);
+      border-color: rgba(56,239,125,.55);
+      box-shadow: 0 30px 65px rgba(17,153,142,.18);
+    }
+
+    .feature-card:hover::before { opacity: 1; }
+
+    .feature-number {
+      position: absolute;
+      right: 18px;
+      top: 8px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 5rem;
+      font-weight: 700;
+      color: rgba(17,153,142,.08);
+      line-height: 1;
+    }
+
+    .feature-icon {
+      position: relative;
+      width: 64px;
+      height: 64px;
+      display: grid;
+      place-items: center;
+      font-size: 1.65rem;
+      color: #fff;
+      border-radius: 20px;
+      background: var(--gradient);
+      box-shadow: 0 12px 28px rgba(56,239,125,.32);
+      transition: .45s ease;
+    }
+
+    .feature-card:hover .feature-icon {
+      transform: rotate(-8deg) scale(1.08);
+    }
+
+    .feature-card h5 {
+      position: relative;
+      font-weight: 800;
+      margin: 1.4rem 0 .7rem;
+    }
+
+    .feature-card p {
+      position: relative;
+      color: #4b5f68;
+      font-size: .92rem;
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    .card-link {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      margin-top: 1.3rem;
+      font-weight: 700;
+      color: var(--teal);
+      text-decoration: none;
+    }
+
+    .card-link i { transition: .25s ease; }
+    .card-link:hover i { transform: translateX(5px); }
+
+    /* STATS */
+    .stats {
+      background: var(--ink);
+      color: #fff;
+      border-radius: 34px;
+      padding: 3rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stats::before {
+      content: "";
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      right: -90px;
+      top: -120px;
+      background: radial-gradient(circle, rgba(56,239,125,.35), transparent 65%);
+    }
+
+    .stat-value {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* CTA */
+    .cta {
+      border-radius: 34px;
+      padding: 3.5rem 2rem;
+      text-align: center;
+      color: #fff;
+      background: linear-gradient(135deg, rgba(17,153,142,.95), rgba(56,239,125,.85));
+      box-shadow: 0 30px 70px rgba(17,153,142,.25);
+    }
+
+    /* FOOTER */
+    footer {
+      margin-top: 6rem;
+      padding: 3.5rem 0 2rem;
+      color: rgba(255,255,255,.72);
+      background: var(--ink);
+      border-top: 3px solid transparent;
+      border-image: linear-gradient(90deg, var(--teal), var(--green)) 1;
+    }
+
+    .footer-title {
+      color: #fff;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .footer-link {
+      display: block;
+      color: rgba(255,255,255,.68);
+      text-decoration: none;
+      margin-bottom: .55rem;
+      transition: .2s ease;
+    }
+
+    .footer-link:hover {
+      color: var(--green);
+      transform: translateX(4px);
+    }
+
+    .footer-link.d-inline {
+      display: inline;
+      margin: 0;
+      padding: 0;
+    }
+
+    .social-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      color: rgba(255,255,255,.75);
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      transition: .25s ease;
+    }
+
+    .social-icon:hover {
+      color: #fff;
+      transform: translateY(-4px);
+      border-color: var(--green);
+      box-shadow: 0 10px 25px rgba(56,239,125,.3);
+    }
+
+    @media (max-width: 767px) {
+      .hero { min-height: auto; padding: 120px 0 130px; }
+      .hero-logo { width: 96px; height: 96px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#home">
+        <span class="brand-dot"></span> PESAT
+      </a>
+
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <div class="navbar-nav ms-auto gap-lg-2">
+          <a class="nav-link active" href="#home">Home</a>
+          <a class="nav-link" href="#programs">Programs</a>
+          <a class="nav-link" href="#student-day">Student Day</a>
+          <a class="nav-link" href="#kopasus-it">Kopasus IT</a>
+          <a class="nav-link" href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="home" class="hero">
+    <div class="container position-relative text-center">
+      <img src="images/logo/pesat.png" alt="PESAT logo" class="hero-logo mb-4">
+
+      <div class="hero-badge mb-4">
+        <span class="live-dot"></span> A Future-Ready School
+      </div>
+
+      <h1 class="hero-title mb-4">
+        Learn <span class="text-gradient">Boldly</span>.<br>
+        Create <span class="text-gradient">Extraordinarily</span>.
+      </h1>
+
+      <p class="hero-slogan mb-4">
+        <i class="bi bi-stars me-2"></i>
+        Nasionalis Sejati, Cerdas, dan Taqwa
+        <i class="bi bi-stars ms-2"></i>
+      </p>
+
+      <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
+        <div class="hero-badge">
+          <i class="bi bi-award me-2"></i> Accredited A
+        </div>
+
+        <div class="hero-badge">
+          <i class="bi bi-patch-check me-2"></i> NPSN 20232396
+        </div>
+      </div>
+
+      <p class="mx-auto mb-4 col-lg-7 fs-5 text-white-50">
+        SMA Plus PGRI Cibinong provides a modern learning environment that combines
+        academic excellence, technology, creativity, and strong character development.
+      </p>
+
+      <div class="d-flex flex-wrap justify-content-center gap-3">
+        <a href="#programs" class="btn btn-neon">
+          Explore Programs <i class="bi bi-arrow-right ms-1"></i>
+        </a>
+        <a href="#contact" class="btn btn-ghost">
+          <i class="bi bi-telephone me-2"></i> Contact Us
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- PROGRAMS -->
+  <section id="programs" class="container py-5 mt-5">
+    <div class="text-center mb-5">
+      <span class="section-label">Featured Programs</span>
+      <h2 class="mt-3 fw-bold display-6">
+        Three Pathways for <span class="text-gradient">Future-Ready Students</span>
+      </h2>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <article class="feature-card">
+          <span class="feature-number">01</span>
+          <div class="feature-icon"><i class="bi bi-rocket-takeoff-fill"></i></div>
+          <h5>Student Day</h5>
+          <p>
+            A space for students to explore their talents, leadership, arts, sports,
+            and collaborative projects through engaging and meaningful activities.
+          </p>
+          <a href="#" class="card-link">View activities <i class="bi bi-arrow-right"></i></a>
+        </article>
+      </div>
+
+      <div class="col-md-4">
+        <article class="feature-card">
+          <span class="feature-number">02</span>
+          <div class="feature-icon"><i class="bi bi-cpu-fill"></i></div>
+          <h5>Kopasus IT</h5>
+          <p>
+            A technology community where students develop coding, digital design,
+            robotics, and problem-solving skills through real-world projects.
+          </p>
+          <a href="#" class="card-link">Join the community <i class="bi bi-arrow-right"></i></a>
+        </article>
+      </div>
+
+      <div class="col-md-4">
+        <article class="feature-card">
+          <span class="feature-number">03</span>
+          <div class="feature-icon"><i class="bi bi-mortarboard-fill"></i></div>
+          <h5>Excellence Class</h5>
+          <p>
+            Focused learning with academic mentoring, digital literacy, and preparation
+            for higher education and future careers.
+          </p>
+          <a href="#" class="card-link">Explore curriculum <i class="bi bi-arrow-right"></i></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="container my-5">
+    <div class="stats">
+      <div class="row text-center g-4 position-relative">
+        <div class="col-6 col-lg-3">
+          <div class="stat-value">1,200+</div>
+          <p class="mb-0 text-white-50">Active Students</p>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="stat-value">85+</div>
+          <p class="mb-0 text-white-50">Professional Educators</p>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="stat-value">40+</div>
+          <p class="mb-0 text-white-50">Extracurricular Activities</p>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="stat-value">A</div>
+          <p class="mb-0 text-white-50">Accreditation</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" class="container my-5">
+    <div class="cta">
+      <h2 class="fw-bold display-6 mb-3">Ready to Join PESAT?</h2>
+      <p class="mx-auto col-lg-7 mb-4">
+        Discover an inspiring, collaborative school experience that prepares students
+        to face the challenges of tomorrow with confidence.
+      </p>
+      <a href="mailto:smaplspgricbn@gmail.com" class="btn btn-dark btn-lg rounded-pill px-4 fw-bold">
+        <i class="bi bi-send me-2"></i> Apply Now
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="student-day">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <h5 class="footer-title d-flex align-items-center gap-2">
+            <span class="brand-dot"></span> PESAT
+          </h5>
+          <p class="mb-2">
+            SMA Plus PGRI Cibinong — shaping intelligent, creative, and character-driven
+            students who are ready to contribute to society.
+          </p>
+
+          <p class="mb-3 fw-semibold text-white">
+            <i class="bi bi-shield-check me-2 text-success"></i>
+            Nasionalis Sejati, Cerdas, dan Taqwa
+          </p>
+
+          <div class="d-flex gap-2">
+            <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-icon"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="social-icon"><i class="bi bi-tiktok"></i></a>
+          </div>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <h6 class="footer-title">Menu</h6>
+          <a href="#home" class="footer-link">Home</a>
+          <a href="#programs" class="footer-link">Programs</a>
+          <a href="#student-day" class="footer-link">Student Day</a>
+          <a href="#kopasus-it" class="footer-link">Kopasus IT</a>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <h6 class="footer-title">Programs</h6>
+          <a href="#student-day" class="footer-link">Student Day</a>
+          <a href="#kopasus-it" class="footer-link">Kopasus IT</a>
+          <a href="#programs" class="footer-link">Excellence Class</a>
+          <a href="#contact" class="footer-link">Admissions</a>
+        </div>
+
+        <div class="col-lg-4">
+          <h6 class="footer-title">School Leadership</h6>
+          <p class="mb-1 fw-semibold text-white">Principal</p>
+          <p class="mb-3">
+            Dr. Iwan Cakrayana, S.T., S.Pd., M.Si., Gr.
+          </p>
+
+          <h6 class="footer-title">School Identity</h6>
+          <p class="mb-2">
+            <i class="bi bi-patch-check me-2"></i>
+            NPSN: 20232396
+          </p>
+          <p class="mb-3">
+            <i class="bi bi-award me-2"></i>
+            Accreditation: <span class="fw-bold text-success">A</span>
+          </p>
+
+          <h6 class="footer-title">Contact</h6>
+          <p class="mb-2">
+            <i class="bi bi-geo-alt me-2"></i>
+            Jalan Golf, Lingkungan Jalan Citatah Dalam No. 03,
+            Ciriung, Kecamatan Cibinong, Kabupaten Bogor,
+            Jawa Barat 16918
+          </p>
+          <p class="mb-2">
+            <i class="bi bi-telephone me-2"></i>
+            <a href="tel:+62218753773" class="footer-link d-inline">
+              (021) 8753773
+            </a>
+          </p>
+          <p class="mb-0">
+            <i class="bi bi-envelope me-2"></i>
+            <a href="mailto:smaplspgricbn@gmail.com" class="footer-link d-inline">
+              smaplspgricbn@gmail.com
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <hr class="border-secondary mt-4">
+      <p class="text-center mb-0 small">
+        © 2026 SMA Plus PGRI Cibinong. Created with <i class="bi bi-heart-fill text-danger"></i> for education.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
